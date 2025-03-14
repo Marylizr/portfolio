@@ -54,7 +54,6 @@ export default function Navbar() {
             { name: "Home", href: "/" },
             { name: "About", href: "/about" },
             { name: "Portfolio", href: "/portfolio" },
-            { name: "Case Studies", href: "/case-studies" },
             { name: "Contact", href: "/contact" },
           ].map((item, index) => (
             <Link key={index} href={item.href} passHref>
