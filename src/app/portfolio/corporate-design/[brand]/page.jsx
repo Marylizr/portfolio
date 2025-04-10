@@ -118,6 +118,86 @@ const brandAssets = {
       },
     ],
   },
+  "waleska": {
+    name: "Waleska",
+    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047306/logowale2_chgci5.svg",
+    description: "A glamorous and elegant brand for a high-end beauty and lifestyle service.",
+    brandKit: [
+      {
+        type: "Logo",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047306/logowale2_chgci5.svg",
+        label: "Primary Logo",
+      },
+      {
+        type: "Logo",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744220312/logowale_amqiwc.png",
+        label: "Secondary Logo",
+      },
+      {
+        type: "Business Card",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744220400/BC_drsn8w.png",
+        label: "Business Card Mockup",
+      },
+      {
+        type: "Letterhead",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744219277/header_pl7spk.png",
+        label: "Letterhead",
+      },
+      {
+        type: "Uniform",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744219444/uniform_t0p4a0.png",
+        label: "Uniform",
+      },
+      {
+        type: "Mockup",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744219278/wale-stationary_vk4sai.png",
+        label: "Brand in Action",
+      },
+      {
+        type: "use",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744219278/use_zh9hd7.png",
+        label: "Brand color use",
+      },
+    ],
+  },
+  "sweatmate": {
+    name: "sweatmate",
+    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047304/logo_sweatMate_ezmkqq.svg",
+    description: "A fitness brand focused on performance, motivation, and physical excellence.",
+    brandKit: [
+      {
+        type: "Logo",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047304/logo_sweatMate_ezmkqq.svg",
+        label: "Primary Logo",
+      },
+      {
+        type: "Logo",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744295233/logo_sweatMate2_sfpelp.png",
+        label: "Secondary Logo",
+      },
+      {
+        type: "Business Card",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744295011/bc_sweatMate_bhj88l.png",
+        label: "Business Card",
+      },
+      {
+        type: "Letterhead",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744295010/letter_sweatMate_mnpq0j.png",
+        label: "Letterhead",
+      },
+      {
+        type: "Uniform",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744295482/uniform_kpyoah.png",
+        label: "Uniform",
+      },
+      {
+        type: "Mockup",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744295011/stationary_e1cfr8.png",
+        label: "Brand in Action",
+      },
+     
+    ],
+  },
 };
 
 export default function BrandGuidelines() {
