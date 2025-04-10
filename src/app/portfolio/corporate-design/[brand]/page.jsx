@@ -88,7 +88,7 @@ const brandAssets = {
     brandKit: [
       {
         type: "Logo",
-        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047306/pixel_yyiprj.svg",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040608/pixel_nwys8f.webp",
         label: "Primary Logo",
       },
       {
@@ -120,7 +120,7 @@ const brandAssets = {
   },
   "waleska": {
     name: "Waleska",
-    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047306/logowale2_chgci5.svg",
+    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040315/logo-wale_b8vyuk.png",
     description: "A glamorous and elegant brand for a high-end beauty and lifestyle service.",
     brandKit: [
       {
