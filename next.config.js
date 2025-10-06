@@ -2,13 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["marylizr.com", "res.cloudinary.com"], // Added Cloudinary support
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-    ],
+    domains: ["res.cloudinary.com", "marylizr.com"],
+  },
+  experimental: {
+    optimizePackageImports: ["framer-motion"],
   },
 };
 
