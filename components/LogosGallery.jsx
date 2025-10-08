@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
+import ImageModal from "../components/ui/ImageModal"; // <- ruta desde /app/portfolio/logos/page.jsx
 
 const logos = [
   { 
@@ -40,7 +42,7 @@ const logos = [
     description: "A bold, urban, and youthful logo for Footify, a streetwear brand that embodies authenticity, creativity, and individuality in the fashion industry." 
   },
   { 
-    title: "Wellness Harmony", 
+    title: "LifeStyle & Wellness", 
     image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047304/wellness_mdtwwe.svg", 
     description: "A soothing and serene logo for a wellness brand, designed to evoke peace, wellbeing, balance, and a holistic approach to health and joy." 
   },
@@ -67,7 +69,11 @@ const logos = [
 ];
 
 export default function LogosGallery() {
-  const router = useRouter(); 
+  const router = useRouter();
+
+  // estado para la modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <section className="relative z-40 pt-32 py-16 bg-gray-900 dark:bg-gray-800 text-textPrimary-light dark:text-textPrimary-dark text-center">
@@ -92,9 +98,21 @@ export default function LogosGallery() {
             whileHover={{ scale: 1.05, boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)" }}
             className="block bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-6 text-center transition-all"
           >
-            <img src={logo.image} alt={logo.title} className="w-full rounded-md mb-4" />
+            {/* click para abrir la modal con SOLO la imagen */}
+            <img
+              src={logo.image}
+              alt={logo.title}
+              className="w-full rounded-md mb-4 cursor-zoom-in"
+              onClick={() => {
+                setSelectedImage(logo.image);
+                setIsModalOpen(true);
+              }}
+            />
+
             <h3 className="text-xl font-semibold">{logo.title}</h3>
-            <p className="text-textSecondary-light dark:text-textSecondary-dark mt-2">{logo.description}</p>
+            <p className="text-textSecondary-light dark:text-textSecondary-dark mt-2">
+              {logo.description}
+            </p>
           </motion.div>
         ))}
       </div>
@@ -104,12 +122,20 @@ export default function LogosGallery() {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => router.push("/portfolio")} 
+          onClick={() => router.push("/portfolio")}
           className="px-6 py-3 bg-primary-light dark:bg-primary-dark text-white dark:text-gray-900 rounded-full shadow-lg transition-all"
         >
           Back to Portfolio
         </motion.button>
       </div>
+
+      {/* Modal reutilizando tu componente existente */}
+      <ImageModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        imageUrl={selectedImage}
+        label={null}  // solo imagen
+      />
     </section>
   );
 }

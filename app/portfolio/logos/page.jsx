@@ -1,5 +1,5 @@
 import LogosGallery from "@/components/LogosGallery";
-import Navbar from "../../../components/navBar/NavBar";
+import Navbar from "../../../components/NavBar";
 
 export default function LogosPage() {
   return (

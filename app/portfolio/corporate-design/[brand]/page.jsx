@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Navbar from "../../../../components/navBar/NavBar";
+import Navbar from "../../../../components/NavBar";
 import ImageModal from "../../../../components/ui/ImageModal";
 
 const brandAssets = {
@@ -83,12 +83,12 @@ const brandAssets = {
   },
   "pixeltrend": {
     name: "PixelTrend Studio",
-    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047306/pixel_yyiprj.svg",
+    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040608/pixel_nwys8f.webp",
     description: "A sleek, futuristic, and modern logo design for PixelTrend Studio, a cutting-edge tech startup focused on innovation and digital trends.",
     brandKit: [
       {
         type: "Logo",
-        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047306/pixel_yyiprj.svg",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040608/pixel_nwys8f.webp",
         label: "Primary Logo",
       },
       {
@@ -120,12 +120,12 @@ const brandAssets = {
   },
   "waleska": {
     name: "Waleska",
-    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047306/logowale2_chgci5.svg",
+    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040315/logo-wale_b8vyuk.png",
     description: "A glamorous and elegant brand for a high-end beauty and lifestyle service.",
     brandKit: [
       {
         type: "Logo",
-        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047306/logowale2_chgci5.svg",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040315/logo-wale_b8vyuk.png",
         label: "Primary Logo",
       },
       {
@@ -198,6 +198,44 @@ const brandAssets = {
      
     ],
   },
+  "Lifestyle & Wellness": {
+    name: "Lifestyle & Wellness",
+    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047304/wellness_mdtwwe.svg",
+    description: "designed to evoke peace, wellbeing, balance, and a holistic approach to health and joy.",
+    brandKit: [
+      {
+        type: "Logo",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047304/wellness_mdtwwe.svg",
+        label: "Primary Logo",
+      },
+      {
+        type: "Logo",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1759945257/Artboard_3_jlsnx7.png",
+        label: "Secondary Logo",
+      },
+      {
+        type: "Business Card",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1759945303/Artboard_5_bmm8ts.png",
+        label: "Business Card",
+      },
+      {
+        type: "Letterhead",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1759945257/Artboard_5_copy_ldhzwy.png",
+        label: "Letterhead",
+      },
+      {
+        type: "Uniform",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1759945257/Artboard_4_ezwbnx.png",
+        label: "Landing Page",
+      },
+      {
+        type: "Mockup",
+        file: "https://res.cloudinary.com/da6il8qmv/image/upload/v1759945219/stationary_ugshbp.png",
+        label: "Brand in Action",
+      },
+     
+    ],
+  },
 };
 
 export default function BrandGuidelines() {
@@ -213,19 +251,21 @@ export default function BrandGuidelines() {
   }
 
   return (
-    <section className="pt-32 min-h-screen bg-gray-900 text-white text-center relative z-20">
+    <section className="pt-32 min-h-screen bg-[#1e2330] dark:bg-[#0f141e] text-white text-center relative z-20">
       <Navbar />
 
-      <motion.h2
+      <motion.h3
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
-        className="text-5xl font-display font-bold mb-12"
+        className="text-5xl font-display font-bold mb-12 text-gray-600 text-[#919191]"
       >
         {data.name} Brand Guidelines
-      </motion.h2>
+      </motion.h3>
 
-      <p className="max-w-xl mx-auto text-lg text-gray-400 mb-10">{data.description}</p>
+      <p className="max-w-xl mx-auto text-lg text-[#c7c7c7] dark:text-gray-300 mb-10">
+        {data.description}
+      </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-6">
         {data.brandKit.map((asset, index) => (
@@ -251,14 +291,15 @@ export default function BrandGuidelines() {
         ))}
       </div>
 
-      <div className="mt-12">
+      <div className="mt-12 mb-1">
         <button
           onClick={() => window.history.back()}
-          className="px-6 py-3 bg-primary-light text-white rounded-full shadow-lg hover:bg-primary-dark transition-all"
+          className="px-8 py-4 mb-8 bg-primary-light text-white rounded-full shadow-lg hover:bg-primary-dark transition-all"
         >
           Back to Corporate Design
         </button>
       </div>
+      
 
       <ImageModal
         isOpen={isModalOpen}

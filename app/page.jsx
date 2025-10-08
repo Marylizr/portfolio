@@ -1,7 +1,9 @@
+"use client";
+
 import DarkModeToggle from "../components/DarkModeToggle";
 import HeroSection from "../components/HeroSection";
-import Navbar from "../components/navBar/NavBar";
-import About from "./about/page";
+import Navbar from "../components/NavBar";
+import About from "../components/About";
 import Portfolio from "./portfolio/page";
 import Services from "./services/page";
 
@@ -10,16 +12,16 @@ export default function Home() {
     <div>
       <Navbar />
       <HeroSection />
-      <div id="about">
+
+      <section id="about">
         <About />
-      </div>
-      <div id="services">
+      </section>
+      <section id="services">
         <Services />
-      </div>
-      <div id="portfolio">
+      </section>
+      <section id="portfolio">
         <Portfolio />
-      </div>
-     
+      </section>
     </div>
   );
 }

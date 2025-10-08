@@ -1,0 +1,239 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* === BASE CONFIGURATION === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background-light text-textPrimary-light antialiased transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-background-dark text-textPrimary-dark;
+}
+
+/* === HEADINGS === */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-display font-semibold text-neutral-900 dark:text-neutral-100;
+}
+
+h1 {
+  @apply text-4xl md:text-6xl leading-tight;
+}
+
+h2 {
+  @apply text-3xl md:text-5xl leading-tight;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl leading-snug;
+}
+
+/* === PARAGRAPHS === */
+p {
+  @apply text-base md:text-lg text-neutral-700 dark:text-neutral-300 leading-relaxed;
+}
+
+/* === LINKS (no @apply para evitar errores) === */
+:root {
+  --accent: #6366F1; /* light */
+}
+.dark {
+  --accent: #818CF8; /* dark */
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+/* === NAVBAR === */
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  z-index: 50;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: all .4s ease;
+
+  background: rgba(255,255,255,.55);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 4px 30px rgba(0,0,0,.02);
+}
+.dark .navbar {
+  background: rgba(17,17,17,.55);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 4px 30px rgba(0,0,0,.30);
+}
+.navbar--scrolled {
+  background: rgba(255,255,255,.8);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  backdrop-filter: blur(12px) saturate(180%);
+  border-color: rgba(0,0,0,.08);
+  box-shadow: 0 8px 30px rgba(0,0,0,.08);
+}
+.dark .navbar--scrolled {
+  background: rgba(17,17,17,.8);
+  border-color: rgba(255,255,255,.08);
+  box-shadow: 0 12px 40px rgba(0,0,0,.4);
+}
+
+/* === NAVBAR — frost siempre visible (top y con scroll) === */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; width: 100%; z-index: 50;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease;
+  background: rgba(255,255,255,0.42);          /* más translúcido */
+  -webkit-backdrop-filter: blur(20px) saturate(170%);
+  backdrop-filter: blur(20px) saturate(170%);   /* blur alto siempre */
+  box-shadow: 0 4px 26px rgba(0,0,0,0.04);
+}
+
+/* Capa interior para efecto “frost” constante */
+.navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(255,255,255,0.10));
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.dark .navbar {
+  background: #1f293700;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+}
+.dark .navbar::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+/* Con scroll: sigue siendo translúcido (no sólido) y sube levemente el blur y opacidad */
+.navbar--scrolled {
+  
+  background: #1f293700;
+  /* NO sólido */
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+}
+.dark .navbar--scrolled {
+  background: rgba(17,17,17,0.50);
+  box-shadow: 0 14px 38px rgba(0,0,0,0.45);
+}
+
+
+.nav-link {
+  @apply text-sm md:text-base font-medium text-neutral-800 dark:text-neutral-200 hover:opacity-70 transition;
+}
+/* Banda sutil bajo el navbar para que el blur se aprecie incluso en el top */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 120px;              /* alto de la banda */
+  background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,0,0,0));
+  pointer-events: none;
+  z-index: 0;
+}
+.dark body::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0));
+}
+
+/* === CONTAINER === */
+.container {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* === BUTTONS === */
+.btn {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-2 text-sm font-medium ring-1 ring-neutral-300 hover:bg-neutral-50 dark:ring-neutral-700 dark:hover:bg-neutral-800 transition;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* === CARDS === */
+.card {
+  @apply dark:bg-neutral-800 ring-1 ring-neutral-200 dark:ring-neutral-700 rounded-2xl shadow hover:shadow-lg transition-all duration-300;
+}
+/* === Ajuste de tono para cards del portfolio en modo oscuro === */
+.dark .portfolio-card {
+  background-color: rgb(135, 145, 160)!important; /* gris-azulado */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-card{
+  background-color:#f3f4f6;
+}
+.dark .portfolio-card:hover {
+  background-color: rgb(191, 194, 198);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/* === GRADIENT ANIMATIONS === */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 120, 0.4);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(120, 120, 120, 0.6);
+}
+
+/* === MODALS === */
+.modal-backdrop {
+  @apply fixed inset-0 bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm;
+}
+
+.modal-content {
+  @apply max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl transition-all;
+}
+
+/* === FOOTER === */
+footer {
+  @apply border-t border-neutral-200 dark:border-neutral-800 py-10 text-center text-sm text-neutral-500 dark:text-neutral-400;
+}
+
+/* === CONCTACT === */
+:root { --primary: #6366f1; }
+.dark { --primary: #818cf8; }
+
+.bg-primary { background-color: var(--primary); }
+.text-primary { color: var(--primary); }
+.ring-primary { --tw-ring-color: var(--primary); }
+

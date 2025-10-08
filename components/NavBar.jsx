@@ -20,6 +20,14 @@ export default function Navbar() {
     }
   }, []);
 
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const toggleDarkMode = () => {
     document.documentElement.classList.toggle("dark");
     localStorage.setItem("theme", darkMode ? "light" : "dark");
@@ -56,21 +64,36 @@ export default function Navbar() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow-md z-50"
+      className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}
+      style={{ position: "fixed" }}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo */}
+        {/* Logo con versión light/dark */}
         <Link href="/" className="flex items-center">
-          <motion.img
-            src="https://res.cloudinary.com/da6il8qmv/image/upload/v1741687794/logo_mary_x45r10.png"
-            alt="logo"
-            width={80}
-            height="auto"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="cursor-pointer"
-          />
+          <div className="relative">
+            {/* Logo para modo claro */}
+            <motion.img
+              src="https://res.cloudinary.com/da6il8qmv/image/upload/v1759946497/logo_mary_x45r10.png"
+              alt="logo light"
+              width={80}
+              height="auto"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="cursor-pointer block dark:hidden"
+            />
+            {/* Logo para modo oscuro */}
+            <motion.img
+              src="https://res.cloudinary.com/da6il8qmv/image/upload/v1759946830/darkmode_vvr0ts.png"
+              alt="logo dark"
+              width={80}
+              height="auto"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="cursor-pointer hidden dark:block"
+            />
+          </div>
         </Link>
 
         {/* Desktop Menu */}
