@@ -1,66 +1,89 @@
-import NavBar from "@/components/NavBar";
+"use client";
 
-export const metadata = {
-  title: "Contact | Marylizr Portfolio",
-  description: "Get in touch with Mary for collaborations, design and web projects.",
-};
+import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
-export default function Page() {
+const uxuiProjects = [
+  {
+    title: "M2M",
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1760011618/logoM2M_kndee8.png",
+    description:
+      "A community-driven referral marketplace connecting small local businesses.",
+    link: "/portfolio/ux-ui/m2m",
+  },
+  {
+    title: "Planto",
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040608/pixeltrend_web_uxui.png",
+    description:
+      "A smart care app that helps plant lovers build consistent, mindful care habits.",
+    link: "/portfolio/ux-ui/planto",
+  },
+  {
+    title: "Wellness & Nutrition App",
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047304/wellness_uxui_mockup.png",
+    description:
+      "An app prototype combining personalized meal plans, macro tracking, and mindfulness reminders — UI focused on serenity and clarity.",
+    link: "/portfolio/ux-ui/wellness",
+  },
+  {
+    title: "E-commerce Flow Redesign",
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742224871/ecommerce_uxui_mockup.png",
+    description:
+      "Redesigned the checkout experience for a fashion e-commerce. Reduced steps, improved clarity, and optimized mobile interaction.",
+    link: "/portfolio/ux-ui/ecommerce",
+  },
+];
+
+export default function UXUIPage() {
+  const router = useRouter();
+
   return (
-    <>
-      <NavBar />
-      <main className="min-h-screen bg-white dark:bg-gray-950 pt-28 px-6">
-        <section className="max-w-3xl mx-auto text-center">
-          <div className="mx-auto mb-8 h-20 w-20 flex items-center justify-center rounded-full bg-gray-900 dark:bg-white">
-            {/* Manufacturing Icon */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 -960 960 960"
-              fill="currentColor"
-              className="h-12 w-12 text-white dark:text-gray-900"
-            >
-              <path d="M480-80q-83 0-156-31.5T196-196q-53-53-84.5-126T80-480q0-83 31.5-156T196-764q53-53 126-84.5T480-880q83 0 156 31.5T764-764q53 53 84.5 126T880-480q0 83-31.5 156T764-196q-53 53-126 84.5T480-80Zm0-80q125 0 212.5-87.5T780-480q0-125-87.5-212.5T480-780q-125 0-212.5 87.5T180-480q0 125 87.5 212.5T480-160Zm0-160q-83 0-141.5-58.5T280-520q0-83 58.5-141.5T480-720q83 0 141.5 58.5T680-520q0 83-58.5 141.5T480-320Zm0-80q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/>
-            </svg>
-          </div>
+    <section className="relative z-40 pt-32 py-16 bg-gray-900 dark:bg-gray-800 text-textPrimary-light dark:text-textPrimary-dark text-center">
+      <motion.h2
+        initial={{ opacity: 0.3 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        className="relative z-30 text-5xl font-display font-bold mb-12 bg-gradient-to-r from-gray-400 via-gray-500 to-gray-700 dark:from-gray-500 dark:via-gray-400 dark:to-gray-300 bg-clip-text text-transparent animate-gradient"
+      >
+        UX / UI Design
+      </motion.h2>
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-            This page is in progress
-          </h1>
+      {/* grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-5xl mx-auto px-6">
+        {uxuiProjects.map((project, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            whileHover={{ scale: 1.05 }}
+            className="block bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-6 text-center transition-all cursor-pointer hover:shadow-xl"
+            onClick={() => router.push(project.link)}
+          >
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full rounded-md mb-4"
+            />
+            <h3 className="text-xl font-semibold">{project.title}</h3>
+            <p className="text-textSecondary-light dark:text-textSecondary-dark mt-2">
+              {project.description}
+            </p>
+          </motion.div>
+        ))}
+      </div>
 
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            I’m polishing a simple, delightful contact experience. Meanwhile, you can reach me directly.
-          </p>
-
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:mypayments.developer@gmail.com"
-              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-white bg-gray-900 dark:bg-white dark:text-gray-900 hover:opacity-90 transition"
-            >
-              Email Mary
-            </a>
-            <a
-              href="https://www.linkedin.com/in/marylizr"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-900 transition"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/Marylizr"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-900 transition"
-            >
-              GitHub
-            </a>
-          </div>
-
-          <div className="mt-10 text-sm text-gray-500 dark:text-gray-400">
-            Prefer WhatsApp or a short call? I can add those here too.
-          </div>
-        </section>
-      </main>
-    </>
+      {/* botón de volver */}
+      <div className="mt-12">
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => router.push("/portfolio")}
+          className="px-6 py-3 bg-primary-light dark:bg-primary-dark text-white dark:text-gray-900 rounded-full shadow-lg transition-all"
+        >
+          Back to Portfolio
+        </motion.button>
+      </div>
+    </section>
   );
 }
