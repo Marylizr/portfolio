@@ -13,23 +13,23 @@ const uxuiProjects = [
   },
   {
     title: "Planto",
-    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040608/pixeltrend_web_uxui.png",
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744037321/logo-planto_skgroj.png",
     description:
       "A smart care app that helps plant lovers build consistent, mindful care habits.",
     link: "/portfolio/ux-ui/planto",
   },
   {
-    title: "Wellness & Nutrition App",
-    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047304/wellness_uxui_mockup.png",
+    title: "SweatMate App",
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744295233/logo_sweatMate2_sfpelp.png",
     description:
       "An app prototype combining personalized meal plans, macro tracking, and mindfulness reminders — UI focused on serenity and clarity.",
     link: "/portfolio/ux-ui/wellness",
   },
   {
-    title: "E-commerce Flow Redesign",
-    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742224871/ecommerce_uxui_mockup.png",
+    title: "Doce & Fit",
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1760031920/doceefit_ljc5w0.png",
     description:
-      "Redesigned the checkout experience for a fashion e-commerce. Reduced steps, improved clarity, and optimized mobile interaction.",
+      "Redesigned the checkout experience for a online bakery. Reduced steps, improved clarity, and optimized mobile interaction.",
     link: "/portfolio/ux-ui/ecommerce",
   },
 ];
