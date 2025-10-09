@@ -36,13 +36,13 @@ export default function PlantoCaseStudy() {
 
         <div className="mt-10">
           <motion.img
-            src="https://res.cloudinary.com/da6il8qmv/image/upload/v1744037321/logo-planto_skgroj.png"
+            src="https://res.cloudinary.com/da6il8qmv/image/upload/v1760029891/hero-section2_vrgyv1.png"
             alt="Planto hero mockup"
             className="w-full max-w-3xl mx-auto rounded-2xl shadow-2xl cursor-zoom-in"
             whileHover={{ scale: 1.02 }}
             onClick={() =>
               openModal(
-                "https://res.cloudinary.com/da6il8qmv/image/upload/v1744037321/logo-planto_skgroj.png"
+                "https://res.cloudinary.com/da6il8qmv/image/upload/v1760029441/hero-section2_vrgyv1.png"
               )
             }
           />
@@ -96,13 +96,13 @@ export default function PlantoCaseStudy() {
         </div>
         <div>
           <motion.img
-            src="https://res.cloudinary.com/da6il8qmv/image/upload/v1744039950/stationery_mockup_converted_mymywc.png"
+            src="https://res.cloudinary.com/da6il8qmv/image/upload/v1760030232/section_ohhq0g.png"
             alt="Research insights"
             className="rounded-2xl shadow-xl cursor-zoom-in"
             whileHover={{ scale: 1.03 }}
             onClick={() =>
               openModal(
-                "https://res.cloudinary.com/da6il8qmv/image/upload/v1744039950/stationery_mockup_converted_mymywc.png"
+                "https://res.cloudinary.com/da6il8qmv/image/upload/v1760030232/section_ohhq0g.png"
               )
             }
           />
@@ -151,11 +151,13 @@ export default function PlantoCaseStudy() {
         <h2 className="text-3xl font-semibold mb-8 text-gray-200">
           Design System
         </h2>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
           {[
-            "https://res.cloudinary.com/da6il8qmv/image/upload/v1744037321/logo-planto2_xdvran.png",
-            "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040315/logo-wale_b8vyuk.png",
-            "https://res.cloudinary.com/da6il8qmv/image/upload/v1744295011/stationary_e1cfr8.png",
+            "https://res.cloudinary.com/da6il8qmv/image/upload/v1760029949/home_copy_2_otj6y5.jpg",
+            "https://res.cloudinary.com/da6il8qmv/image/upload/v1760029948/home_copy_3_x98hvl.jpg",
+            "https://res.cloudinary.com/da6il8qmv/image/upload/v1760029949/home_copy_4_o7w2ds.jpg",
+            "https://res.cloudinary.com/da6il8qmv/image/upload/v1760029951/tutorial_eomjlf.jpg",
+            
           ].map((img, i) => (
             <motion.img
               key={i}
@@ -188,9 +190,9 @@ export default function PlantoCaseStudy() {
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {[
-            "https://res.cloudinary.com/da6il8qmv/image/upload/v1744295011/bc_sweatMate_bhj88l.png",
-            "https://res.cloudinary.com/da6il8qmv/image/upload/v1744295482/uniform_kpyoah.png",
-            "https://res.cloudinary.com/da6il8qmv/image/upload/v1743352086/chico_back3_bbixfr.png",
+            "https://res.cloudinary.com/da6il8qmv/image/upload/v1744037321/logo-planto_skgroj.png",
+            "https://res.cloudinary.com/da6il8qmv/image/upload/v1744037242/uniform-planto_mv1pbv.png",
+            "https://res.cloudinary.com/da6il8qmv/image/upload/v1760030702/design_system_wrmkue.jpg",
           ].map((img, i) => (
             <motion.img
               key={i}
