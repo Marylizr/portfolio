@@ -1,66 +1,87 @@
-import NavBar from "@/components/NavBar";
+"use client";
 
-export const metadata = {
-  title: "Contact | Marylizr Portfolio",
-  description: "Get in touch with Mary for collaborations, design and web projects.",
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import Navbar from "@/components/NavBar";
+
+// Websites data (replace/add as needed)
+const websitesData = {
+  "the-roll": {
+    name: "The Roll",
+    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1760384862/logo_theRoll_h293pw.png",
+    description:
+      "Single‑page restaurant website with hero, menu sections, and gallery. Built with Next.js, Tailwind, Framer Motion. Deployed on Netlify.",
+    url: "https://the-roll.netlify.app/",
+  },
+  "pixeltrend": {
+    name: "PixelTrend Studio",
+    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1744040608/pixel_nwys8f.webp",
+    description:
+      "Minimal, professional and interactive portfolio with Apple‑inspired flow. Sections: Home, Services, Portfolio, Contact, Blog, About.",
+    url: "https://marylizr.netlify.app/",
+  },
+  "sweatmate": {
+    name: "SweatMate",
+    logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1759946142/logo_sweatMate_ezmkqq.png",
+    description:
+      "Landing and in‑app UI for a fitness SaaS. Emphasis on onboarding, scheduling, and clear conversion paths.",
+    url: "https://sweatmateapp.netlify.app//",
+  },
 };
 
-export default function Page() {
+export default function WebDesign() {
+  const router = useRouter();
+
   return (
-    <>
-      <NavBar />
-      <main className="min-h-screen bg-white dark:bg-gray-950 pt-28 px-6">
-        <section className="max-w-3xl mx-auto text-center">
-          <div className="mx-auto mb-8 h-20 w-20 flex items-center justify-center rounded-full bg-gray-900 dark:bg-white">
-            {/* Manufacturing Icon */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 -960 960 960"
-              fill="currentColor"
-              className="h-12 w-12 text-white dark:text-gray-900"
-            >
-              <path d="M480-80q-83 0-156-31.5T196-196q-53-53-84.5-126T80-480q0-83 31.5-156T196-764q53-53 126-84.5T480-880q83 0 156 31.5T764-764q53 53 84.5 126T880-480q0 83-31.5 156T764-196q-53 53-126 84.5T480-80Zm0-80q125 0 212.5-87.5T780-480q0-125-87.5-212.5T480-780q-125 0-212.5 87.5T180-480q0 125 87.5 212.5T480-160Zm0-160q-83 0-141.5-58.5T280-520q0-83 58.5-141.5T480-720q83 0 141.5 58.5T680-520q0 83-58.5 141.5T480-320Zm0-80q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/>
-            </svg>
-          </div>
+    <section className="min-h-screen bg-gray-900 text-white">
+      <Navbar />
 
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
-            This page is in progress
-          </h1>
+      {/* Spacing between Navbar and title */}
+      <div className="pt-24 text-center">
+        <motion.h3
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2 }}
+          className="text-5xl font-display font-bold mb-12 text-[#919191]"
+        >
+          Web Design
+        </motion.h3>
 
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300">
-            I’m polishing a simple, delightful contact experience. Meanwhile, you can reach me directly.
-          </p>
-
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="mailto:mypayments.developer@gmail.com"
-              className="inline-flex items-center justify-center rounded-xl px-6 py-3 text-white bg-gray-900 dark:bg-white dark:text-gray-900 hover:opacity-90 transition"
-            >
-              Email Mary
-            </a>
-            <a
-              href="https://www.linkedin.com/in/marylizr"
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto pb-8">
+          {Object.entries(websitesData).map(([key, site]) => (
+            <motion.a
+              key={key}
+              href={site.url}
               target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-900 transition"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ scale: 1.05 }}
+              className="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-4 text-center hover:scale-105 transition block"
             >
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/Marylizr"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center justify-center rounded-xl px-6 py-3 border border-gray-300 dark:border-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-900 transition"
-            >
-              GitHub
-            </a>
-          </div>
+              {/* Card Content */}
+              <div className="p-4 bg-white rounded-lg mb-4 flex items-center justify-center">
+                <img src={site.logo} alt={site.name} className="w-60 h-60 object-contain" />
+              </div>
+              <p className="text-gray-600 dark:text-gray-300 font-medium">{site.name}</p>
+              <p className="text-gray-600 dark:text-gray-400 mt-2">{site.description}</p>
+            </motion.a>
+          ))}
+        </div>
 
-          <div className="mt-10 text-sm text-gray-500 dark:text-gray-400">
-            Prefer WhatsApp or a short call? I can add those here too.
-          </div>
-        </section>
-      </main>
-    </>
+        {/* Back to Portfolio */}
+        <div className="mt-12">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => router.push("/portfolio")}
+            className="px-6 py-3 mb-8 bg-primary-light dark:bg-primary-dark text-white dark:text-gray-900 rounded-full shadow-lg transition-all"
+          >
+            Back to Portfolio
+          </motion.button>
+        </div>
+      </div>
+    </section>
   );
 }
