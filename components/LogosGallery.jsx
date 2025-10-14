@@ -32,8 +32,8 @@ const logos = [
     description: "A chic and stylish logo for PinkTail, a brand that specializes in beautifully crafted cocktails. The design blends simplicity with a touch of flair." 
   },
   { 
-    title: "SweatMate Fitness", 
-    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047304/logo_sweatMate_ezmkqq.svg", 
+    title: "SweatMate App", 
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1759946142/logo_sweatMate_ezmkqq.png", 
     description: "A strong and dynamic logo for a fitness app. The design embodies energy, movement, and motivation for those striving to reach their fitness goals." 
   },
   { 
@@ -43,16 +43,16 @@ const logos = [
   },
   { 
     title: "LifeStyle & Wellness", 
-    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742047304/wellness_mdtwwe.svg", 
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1759946059/wellness_mdtwwe.png", 
     description: "A soothing and serene logo for a wellness brand, designed to evoke peace, wellbeing, balance, and a holistic approach to health and joy." 
   },
   { 
     title: "La Erotique", 
-    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742224871/laerotique_lpsgep.svg", 
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1743527256/laerotique2_ohafmk.webp", 
     description: "A sensual and sophisticated logo that captures the essence of elegance and allure. With its bold yet refined composition, it evokes passion, intimacy, and the art of seduction." 
   },
   { 
-    title: "La Vida Fit y Activa", 
+    title: "Vida Fit y Activa", 
     image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742224871/VidaFit-03_wiqsk5.jpg", 
     description: "A dynamic and empowering design that embodies movement, strength, and a commitment to an active lifestyle. The perfect fusion of aesthetics and energy, making the brand both inviting and inspiring." 
   },
@@ -63,7 +63,7 @@ const logos = [
   },
   { 
     title: "G", 
-    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1742224871/logo-G_vrynqb.svg", 
+    image: "https://res.cloudinary.com/da6il8qmv/image/upload/v1760468106/logo-G_vrynqb.png", 
     description: "A sleek and versatile logo crafted for a high-end brand that spans luxury tourism, VIP entertainment, and exclusive real estate hosting. Its minimalist yet powerful design radiates prestige, exclusivity, and world-class service." 
   },
 ];
