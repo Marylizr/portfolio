@@ -25,7 +25,7 @@ const websitesData = {
     logo: "https://res.cloudinary.com/da6il8qmv/image/upload/v1759946142/logo_sweatMate_ezmkqq.png",
     description:
       "Landing and in‑app UI for a fitness SaaS. Emphasis on onboarding, scheduling, and clear conversion paths.",
-    url: "https://sweatmateapp.netlify.app//",
+    url: "https://sweatmateapp.netlify.app",
   },
 };
 
@@ -37,7 +37,7 @@ export default function WebDesign() {
       <Navbar />
 
       {/* Spacing between Navbar and title */}
-      <div className="pt-24 text-center">
+      <div className="pt-24 text-center px-4 sm:px-6">
         <motion.h3
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -47,25 +47,34 @@ export default function WebDesign() {
           Web Design
         </motion.h3>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto pb-8">
+        {/* Match card sizing with UX/UI page */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto pb-10">
           {Object.entries(websitesData).map(([key, site]) => (
             <motion.a
               key={key}
               href={site.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-4 text-center hover:scale-105 transition block"
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.03 }}
+              className="bg-gray-100 dark:bg-gray-700 rounded-lg shadow-md p-3 md:p-4 text-center block max-w-[520px] w-full mx-auto"
             >
-              {/* Card Content */}
-              <div className="p-4 bg-white rounded-lg mb-4 flex items-center justify-center">
-                <img src={site.logo} alt={site.name} className="w-60 h-60 object-contain" />
+              {/* Logo box: same proportions as UX/UI cards */}
+              <div className="bg-white rounded-lg mb-3 flex items-center justify-center w-full aspect-[4/3] overflow-hidden">
+                {/* Let the image fit instead of fixed w/h so it doesn't look oversized on mobile */}
+                <img
+                  src={site.logo}
+                  alt={site.name}
+                  className="max-h-[70%] max-w-[85%] object-contain"
+                  loading="lazy"
+                />
               </div>
-              <p className="text-gray-600 dark:text-gray-300 font-medium">{site.name}</p>
-              <p className="text-gray-600 dark:text-gray-400 mt-2">{site.description}</p>
+              <p className="text-gray-700 dark:text-gray-200 font-semibold mt-1">{site.name}</p>
+              <p className="text-gray-600 dark:text-gray-300 mt-2 text-sm leading-relaxed">
+                {site.description}
+              </p>
             </motion.a>
           ))}
         </div>
@@ -73,8 +82,8 @@ export default function WebDesign() {
         {/* Back to Portfolio */}
         <div className="mt-12">
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{ scale: 1.08 }}
+            whileTap={{ scale: 0.96 }}
             onClick={() => router.push("/portfolio")}
             className="px-6 py-3 mb-8 bg-primary-light dark:bg-primary-dark text-white dark:text-gray-900 rounded-full shadow-lg transition-all"
           >
